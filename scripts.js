@@ -1,3 +1,5 @@
+
+
 let products = [
   {
     photo: "img/big-mac.png",
@@ -80,12 +82,11 @@ let product = document.getElementsByClassName("photo");
 Array.from(product).forEach(function (element) {
   element.addEventListener('click', function () {
     let productDiv = element.closest(".product")
-    console.log(productDiv);
     let description = productDiv.querySelector(".description");
     let name = description.querySelector('.name');
 
     name = name.textContent || node.innerText;
-    
+
     AddProductQuantity(name, false, description);
   });
 });
