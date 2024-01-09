@@ -91,6 +91,20 @@ Array.from(product).forEach(function (element) {
   });
 });
 
+let productLabel = document.getElementsByClassName("name");
+
+Array.from(productLabel).forEach(function (element) {
+  element.addEventListener('click', function () {
+    let productDiv = element.closest(".product")
+    let description = productDiv.querySelector(".description");
+    let name = description.querySelector('.name');
+
+    name = name.textContent || node.innerText;
+
+    AddProductQuantity(name, false, description);
+  });
+});
+
 function CheckName(node, haveToRemove) {
 
   let description = node.closest('.description');
